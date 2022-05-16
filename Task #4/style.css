@@ -1,0 +1,343 @@
+/* General CSS Settings */
+
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Sacramento&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(12, 12, 12);
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 700px) {
+    .container{
+        flex-direction: row;
+    }
+}
+
+/* Header & Navigation bar */
+
+nav > h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 3.5em;
+    margin: 0;
+    
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 90%;
+}
+
+li {
+    display: inline-block;
+    padding: 1em 1.5em;
+}
+
+li a {
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2em;
+    font-family: 'Alice', serif;
+}
+
+li a:hover {
+    background-color: #DBD8D3;
+}
+
+@media screen and (min-width: 700px) {
+    ul {
+        justify-content: center;
+        flex-direction: row;
+    }  
+}
+
+/* Image */ 
+
+
+.bg-image {
+    background-image: url(wedding-bg.jpg);
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 100vh;
+    position: relative;
+}
+
+.bg-image h2 {
+    width: 50%;
+    font-family: 'Alice', serif;
+    color: #2E2D25;
+    font-size: 2.5em;
+}
+
+.center-text {
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+}
+
+.button {
+    padding: 10px;
+    border: none;
+    background-color: #ffffff;
+    color: #2E2D25; 
+    font-weight: 600;
+    border-radius: 20px;
+    transition: 220ms all ease-in-out;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.25em;
+}
+
+.button:hover {
+    box-shadow: -2px 2px 10px 0px gray;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width:700px){
+    .bg-image h2 {
+        display: none;
+    }
+
+    .center-text {
+        top: 50%;
+    }
+
+    .button {
+        font-size: 1.5em;
+    }
+}
+
+/* Search box */
+
+#form-container {
+    min-height: 10vh;
+    background-color: #C0C2BD;
+}
+
+.form-input {
+    padding: 0.45rem;
+    font-size: 1.25rem;
+    border: 0px;
+    margin: 0.25em;
+    box-shadow: 0 0 0.45em 0.15em rgb(0 0 0 / 6%);
+    border-radius: 1em;
+    font-family: 'Alice', serif;
+}
+
+.form-col {
+    justify-content: center;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: #28241B;
+    font-family: 'Alice', serif;
+    font-weight: 600;
+}
+
+label {
+    font-size: 1.25rem;
+}
+
+#partySize {
+    width: 8ch;
+}
+
+#cateringGrade {
+    width: 17ch;
+}
+
+#form-container button {
+    padding: 10px;
+    border: none;
+    background-color: #28241B;
+    color: white; 
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 1.5ch;
+    transition: 220ms all ease-in-out;
+    cursor: pointer;
+    font-family: 'Alice', serif;
+    font-size: 1.25rem;
+}
+
+#form-container button:hover,
+#form-container button:focus {
+    box-shadow: -2px 2px 10px 0px gray;
+    transform: scale(1.05);
+}
+
+
+@media screen and (max-width:700px) {
+    #form-container button{
+        margin: 0;
+        min-width: 16ch;
+        font-size: 1rem;
+    }
+}
+
+/* Results */
+
+.date-container {
+    font-family: 'Alice', serif;
+    font-size: 1.25em;
+}
+
+.results-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-auto-flow: row;
+    gap: 2em;
+    margin-inline: 2em;
+    width: 90%
+}
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-shadow: 2px 2px 5px #888888;
+    align-items: center;
+    border: 1px solid black;
+    min-height: 60vh;
+}
+
+.result-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    row-gap: 0.5em;
+    width: 80%;
+}
+
+.result-image {
+    width: 80%;
+    padding-top: 2ch;
+    height: auto;
+    min-height: 30%;
+    object-fit: cover;
+    max-height: 40vh;
+    max-width: 40vw;
+}
+
+.result-card > h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.75em;
+    margin-bottom: 10px;
+}
+
+.result-card hr {
+    border: none;
+    border-top: 3px double rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    width: 80%;
+}
+
+.result-info hr {
+    border: none;
+    border-top: 3px double rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    width: 95%;
+    grid-column: 1 / 3;
+    margin: 0;
+}
+
+.result-card > h3 {
+    margin: 0;
+    font-family: 'Alice', serif;
+}
+
+.result-info > h4 {
+    font-family: 'Alice', serif;
+    width: 10ch;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 700px) {
+    .result-card > h1 {
+        font-size: 2.25em;
+        margin-top: 10px;
+    }
+
+    .results-list {
+        margin-inline: 0;
+    }
+}
+
+/* Footer */
+
+footer {
+    background: #111;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 1ch;
+    font-family: 'Alice', serif;
+}
+
+footer div {
+    flex-direction: column !important;
+}
+
+footer h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-family: 'Alice', serif;
+    margin: 5px;
+}
+
+footer p {
+    max-width: 40vw;
+    margin: 5px auto;
+    line-height: 20px;
+    font-size: 0.75rem;
+    color: #cacdd2;
+}
+
+.bottom {
+    background: #000;
+}
+
+@media screen and (max-width: 700px) {
+    footer p {
+        max-width: 70vw;
+    }
+}
